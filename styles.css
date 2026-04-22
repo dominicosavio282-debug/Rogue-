@@ -62,20 +62,21 @@ main {
 }
 
 .site-header {
-  position: sticky;
-  top: 16px;
+  position: relative;
+  top: auto;
   z-index: 10;
-  margin-top: 16px;
-  padding: 14px 18px;
+  margin-top: 0;
+  padding: 18px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: rgba(5, 12, 24, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .brand {
@@ -160,11 +161,11 @@ main {
 }
 
 .hero {
-  padding: 82px 0 52px;
+  padding: 52px 0 52px;
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
   gap: 40px;
-  align-items: center;
+  align-items: start;
 }
 
 .eyebrow,
@@ -244,11 +245,12 @@ main {
 
 .hero-visual {
   position: relative;
+  padding-top: 44px;
 }
 
 .visual-shell {
   position: relative;
-  min-height: 640px;
+  min-height: 760px;
 }
 
 .visual-grid,
@@ -258,21 +260,13 @@ main {
 }
 
 .visual-grid {
-  position: absolute;
-  inset: 48px 12px 12px 48px;
-  border-radius: 34px;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(88, 166, 255, 0.1), transparent);
-  background-size: 42px 42px, 42px 42px, auto;
-  box-shadow: inset 0 0 80px rgba(88, 166, 255, 0.08);
+  display: none;
 }
 
 .dashboard-panel {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 56px;
   width: min(100%, 540px);
   padding: 26px;
   border-radius: 30px;
@@ -388,16 +382,9 @@ main {
   box-shadow: var(--shadow);
 }
 
-.liquidity-card {
-  top: 18px;
-  right: 90px;
-  width: 240px;
-  animation: drift 6s ease-in-out infinite;
-}
-
 .risk-card {
-  left: 0;
-  bottom: 110px;
+  left: 24px;
+  bottom: 24px;
   width: 250px;
   animation: drift 7s ease-in-out infinite reverse;
 }
@@ -607,22 +594,19 @@ main {
   }
 
   .visual-shell {
-    min-height: 560px;
+    min-height: 640px;
   }
 
   .dashboard-panel {
     position: relative;
     width: 100%;
-    margin-top: 90px;
-  }
-
-  .liquidity-card {
-    right: 24px;
+    top: auto;
+    margin-top: 64px;
   }
 
   .risk-card {
     left: 16px;
-    bottom: 340px;
+    bottom: 24px;
   }
 }
 
@@ -649,11 +633,7 @@ main {
   }
 
   .visual-shell {
-    min-height: 520px;
-  }
-
-  .visual-grid {
-    inset: 28px 0 0 0;
+    min-height: auto;
   }
 
   .floating-card {
@@ -661,7 +641,6 @@ main {
     width: 100%;
   }
 
-  .liquidity-card,
   .risk-card {
     top: auto;
     right: auto;
